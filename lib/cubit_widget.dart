@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CubitWidgetWithText extends StatelessWidget {
   final Color clr;
@@ -18,19 +19,18 @@ class CubitWidgetWithText extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 100,
-            width: 100,
-            padding: const EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              color: clr,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(15),
+              height: 100,
+              width: 100,
+              padding: const EdgeInsets.all(30),
+              decoration: BoxDecoration(
+                color: clr,
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(15),
+                ),
               ),
-            ),
-            child: Image.network(
-              icon,
-            ),
-          ),
+              child: SvgPicture.asset(
+                icon,
+              )),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(

@@ -2,6 +2,8 @@ import 'package:eee/counter_widget.dart';
 import 'package:eee/cubit_widget.dart';
 import 'package:flutter/material.dart';
 
+import 'second_screen.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -37,18 +39,18 @@ class HomePage extends StatelessWidget {
         ],
       ),
       backgroundColor: const Color(0xff2D2F41),
-      body: const Column(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
+          const Icon(
             Icons.safety_check_sharp,
             color: Colors.white,
             size: 100,
           ),
-          CounterWidget(
+          const CounterWidget(
             name: 'ahmed',
           ),
-          SingleChildScrollView(
+          const SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Padding(
               padding: EdgeInsets.only(
@@ -58,8 +60,7 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   CubitWidgetWithText(
-                    icon:
-                        'https://cdn-icons-png.flaticon.com/512/1077/1077114.png',
+                    icon: 'assets/apple.svg',
                     clr: Colors.white,
                     txt: 'Apple',
                   ),
@@ -98,6 +99,21 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePageTwo(),
+                ),
+              );
+            },
+            child: const Text('Go to Screen Two'),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Go To Screen'),
           ),
         ],
       ),
